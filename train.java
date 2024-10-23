@@ -9,10 +9,11 @@ public class train extends landTransportation{
         this.stationLocation= "Wave Forden Station transit center 505 Cando Street ";
         this.timesDeparting = "9:00 am Monday-Friday";
     }
-
+    //accessors
     public String getTimesDeparting() {return timesDeparting;}
     public String getStationLocation() {return stationLocation;}
 
+    //mutators
     public void setTimesDeparting (String timesDeparting) {this.timesDeparting = timesDeparting;}
     public void setStationLocation (String stationLocation) {this.stationLocation = stationLocation;}
 
