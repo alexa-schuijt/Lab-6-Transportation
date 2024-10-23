@@ -1,10 +1,10 @@
-public class landTransportation extends Transportation {
+public class LandTransportation extends Transportation {
     //instance variables
     private String[] options;
     private int numOfWheels;
 
     //constructor
-    landTransportation(float cost, String purchaseMethod, int averageSpeed, int numPassengers, int numOfWheels){
+    LandTransportation(float cost, String purchaseMethod, int averageSpeed, int numPassengers, int numOfWheels){
         super(cost, purchaseMethod, averageSpeed, numPassengers);
         this.numOfWheels = numOfWheels;
     }
