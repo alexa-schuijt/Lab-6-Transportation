@@ -4,7 +4,7 @@ public class WaterTransportation extends Transportation{
     private String[] options;
 
     // constructor
-    waterTransportation(float cost, String purchaseMethod, int averageSpeed, int numPassengers, String portLocation){
+    WaterTransportation(float cost, String purchaseMethod, int averageSpeed, int numPassengers, String portLocation){
       super(cost, purchaseMethod, averageSpeed, numPassengers);
         this.portLocation = portLocation;
     }
