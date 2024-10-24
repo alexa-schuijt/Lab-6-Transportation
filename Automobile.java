@@ -11,8 +11,8 @@ public class Automobile extends landTransportation {
     }
 
     //accessors
-    private String getRentalLocation() {return rentalLocation;}
-    private double getMilesPerGallon() {return milesPerGallon;}
+    public String getRentalLocation() {return rentalLocation;}
+    public double getMilesPerGallon() {return milesPerGallon;}
 
     //mutator
     public void setRentalLocation (String rentalLocation) {this.rentalLocation = rentalLocation;}
