@@ -1,10 +1,10 @@
-public class WaterTransportation extends Transportation{
+public class waterTransportation extends Transportation{
     // instance variables
     private String portLocation;
     private String[] options;
 
     // constructor
-    WaterTransportation(float cost, String purchaseMethod, int averageSpeed, int numPassengers, String portLocation){
+    waterTransportation(float cost, String purchaseMethod, int averageSpeed, int numPassengers, String portLocation){
       super(cost, purchaseMethod, averageSpeed, numPassengers);
         this.portLocation = portLocation;
     }
