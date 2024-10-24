@@ -7,7 +7,7 @@ public class Automobile extends landTransportation {
     Automobile(){
         super(150,"rental",45, 5,4);
         this.rentalLocation = "Enterprise Rent-A-Car";
-        this.milesPerGallon = 19.5;
+        this.milesPerGallon = 25.0;
     }
 
     //accessors
