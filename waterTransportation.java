@@ -1,4 +1,4 @@
-public class waterTransportation extends Transportation{
+public class WaterTransportation extends Transportation{
     // instance variables
     private String portLocation;
     private String[] options;
