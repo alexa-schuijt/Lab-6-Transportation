@@ -1,26 +1,33 @@
-public class Dirigible extends airTransportation{
+public class Dirigible extends AirTransportation{
+    // instance variable
     private String reservationWaitTime;
 
+    // constructor
     Dirigible(){
-        super(800, "rental", 110, 6, 6000);
-        this.reservationWaitTime = "25 minutes";
+        super("Dirigible", 600, "ticket", 40, 6, 10000,
+                "Weeksville Naval Air Station");
+        this.reservationWaitTime = "4 weeks";
     }
 
+    // accessors
     public String getReservationWaitTime() { return reservationWaitTime; }
 
-    public void setreservationWaitTime(String reservationWaitTime) {
+    //mutators
+    public void setReservationWaitTime(String reservationWaitTime) {
         this.reservationWaitTime = reservationWaitTime;
     }
 
-
-    @Override
+    // methods
     public String toString() {
-        return String.format("%-20s%20.2f%20s%20d%20d%20d%n", "Dirigible", getCost(), getPurchaseMethod(),
-                getAverageSpeed(), getNumPassengers(), getHeightMax());
+        String parentString = super.toString();
+        return String.format("%s%25s%s%n", parentString, "Reservation wait time: ", getReservationWaitTime());
     }
 
     public String getInstructions(){
-        return String.format("%n%s%s%n", "Your reservation wait time: ", reservationWaitTime);
+        String parentString = super.getInstructions();
+        return String.format("%s%n%s%n%s%s%n", parentString,
+                "There are less than 20 dirigibles in the United States! You will " +
+                "have a long wait time!", "Your reservation wait time: ", getReservationWaitTime());
     }
-    
+
 }
