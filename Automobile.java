@@ -1,32 +1,39 @@
-public class Automobile extends landTransportation {
+public class Automobile extends LandTransportation {
     //instance variables
-    private String rentalLocation;
     private double milesPerGallon;
+    private int hoursRented;
 
     //constructor
     Automobile(){
-        super(150,"rental",45, 5,4);
-        this.rentalLocation = "Enterprise Rent-A-Car";
-        this.milesPerGallon = 25.0;
+        super("Automobile", 150,"rental",45, 5,4,
+                "Enterprise Rent-A-Car");
+        this.milesPerGallon = 19.5;
+        this.hoursRented = 48;
     }
 
     //accessors
-    public String getRentalLocation() {return rentalLocation;}
     public double getMilesPerGallon() {return milesPerGallon;}
+    public int getTimeRented() { return hoursRented; }
 
     //mutator
-    public void setRentalLocation (String rentalLocation) {this.rentalLocation = rentalLocation;}
     public void setMilesPerGallon(double milesPerGallon) {this.milesPerGallon = milesPerGallon;}
+    public void setTimeRented ( int timeRented ) { this.hoursRented = timeRented; }
 
+    // methods
     @Override
     public String toString() {
-        return String.format("%-20s%20.2f%20s%20d%20d%n", "Automobile", getCost(), getPurchaseMethod(),
-                getAverageSpeed(), getNumPassengers());
+        String parentString = super.toString();
+        return String.format("%s%25s%.2f%n%170s%d%n", parentString, "MPG: ", milesPerGallon, "hours rented: ",
+                hoursRented);
     }
 
-    public String displayInstructions(){
-        return String.format("%n%s%s%n%s%s%n", "Rental location: ", getRentalLocation(), "Miles Per Gallon: ", milesPerGallon);
+    @Override
+    public String getInstructions(){
+        String parentString = super.getInstructions();
+        return String.format("%s%n%s%s%n%s%d%n", parentString , "Miles Per Gallon: ",
+                milesPerGallon, "Hours rented: ", hoursRented);
     }
 
 
 }
+
