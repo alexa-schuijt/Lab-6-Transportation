@@ -1,31 +1,41 @@
-public class Bike extends landTransportation {
+public class Bike extends LandTransportation {
     //instance variables
-    private String rentalLocation;
     private int daysRented;
+    private Boolean isItElectric;
 
     //constructor
     Bike(){
-        super(30,"rental", 15, 1,2);
-        this.rentalLocation = "Hawk Wheels";
+        super("Bike", 30,"rental", 15, 1,2,
+                "Hawk Wheels");
         this.daysRented = 10;
+        this.isItElectric = true;
     }
 
     //accessors
-    public String getRentalLocation() {return rentalLocation;}
     public int getDaysRented() {return daysRented;}
 
+    public Boolean getItElectric() {
+        return isItElectric; }
+
     //mutators
-    public void setRentalLocation (String rentalLocation) {this.rentalLocation = rentalLocation;}
     public void setDaysRented (int daysRented) {this.daysRented = daysRented;}
 
+    public void setIsItElectric(Boolean isItElectric) {
+        this.isItElectric = isItElectric; }
+
+    // methods
     @Override
     public String toString() {
-        return String.format("%-20s%20.2f%20s%20d%20d%n", "Bike", getCost(), getPurchaseMethod(),
-                getAverageSpeed(), getNumPassengers());
+        String parentString = super.toString();
+        return String.format("%s%25s%s%n%170s%s%n", parentString, "Days rented: ", daysRented, "Electric bike? ",
+                (isItElectric ? "Yes" : "No:"));
     }
 
-    public String displayInstructions(){
-        return String.format("%n%s%s%n%s%s%n", "Rental location: ", getRentalLocation(), "Days Rented: ", daysRented);
+    public String getInstructions(){
+        String parentString = super.getInstructions();
+        return String.format("%s%n%s%s%n%s", parentString, "Days Rented: ", daysRented,
+                (isItElectric ? "Bikes are electric" : "Bikes are not electric"));
     }
 
 }
+
